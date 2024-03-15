@@ -1,5 +1,24 @@
 {
   "Index": {
     "title": "Привет мир!"
+  },
+  "components": {
+    "header": {
+      "loginButton": "Войти"
+    },
+    "toggle_language_button": {
+      "dropdown-menu": {
+        "system": "Русский",
+        "dark": "Английский",
+        "light": "Немецкий"
+      }
+    },
+    "toggle_theme_button": {
+      "dropdown-menu": {
+        "system": "Системная",
+        "dark": "Тёмная",
+        "light": "Светлая"
+      }
+    }
   }
 }

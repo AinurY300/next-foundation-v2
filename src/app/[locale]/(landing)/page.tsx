@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl'
 
 export default function LandingPage() {
-	const t = useTranslations('Index')
-	return <div>{t('title')}</div>
+	const t = useTranslations()
+	return <div>{t('Index.title')}</div>
 }

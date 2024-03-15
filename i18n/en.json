@@ -1,5 +1,17 @@
 {
   "Index": {
-    "title": "Hello world!"
+    "title": "Hello World!"
+  },
+  "components": {
+    "toggle_theme_button": {
+      "dropdown-menu": {
+        "system": "System",
+        "dark": "Dark",
+        "light": "Light"
+      }
+    },
+    "header": {
+      "loginButton": "Login"
+    }
   }
 }

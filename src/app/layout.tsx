@@ -2,7 +2,7 @@ import '../styles/global.css'
 import { Manrope as FontSans } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
-import { locales } from '@/i18n'
+import { locales } from '@/config'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
 /**
