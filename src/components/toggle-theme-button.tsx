@@ -7,13 +7,14 @@ import { Button } from '@/components/ui/button'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuItem,
 	DropdownMenuTrigger,
+	DropdownMenuRadioGroup,
+	DropdownMenuRadioItem,
 } from '@/components/ui/dropdown-menu'
 
 export function ToggleThemeButton() {
-	const t = useTranslations()
-	const { setTheme } = useTheme()
+	const t = useTranslations('components.toggleThemeButton.dropDownMenu')
+	const { setTheme, theme } = useTheme()
 
 	return (
 		<DropdownMenu>
@@ -24,16 +25,18 @@ export function ToggleThemeButton() {
 				</Button>
 			</DropdownMenuTrigger>
 
-			<DropdownMenuContent align="end">
-				<DropdownMenuItem onClick={() => setTheme('light')}>
-					{t('components.toggle_theme_button.dropdown-menu.light')}
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('dark')}>
-					{t('components.toggle_theme_button.dropdown-menu.dark')}
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('system')}>
-					{t('components.toggle_theme_button.dropdown-menu.system')}
-				</DropdownMenuItem>
+			<DropdownMenuContent>
+				<DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+					<DropdownMenuRadioItem value="light">
+						{t('light')}
+					</DropdownMenuRadioItem>
+					<DropdownMenuRadioItem value="dark">
+						{t('dark')}
+					</DropdownMenuRadioItem>
+					<DropdownMenuRadioItem value="system">
+						{t('system')}
+					</DropdownMenuRadioItem>
+				</DropdownMenuRadioGroup>
 			</DropdownMenuContent>
 		</DropdownMenu>
 	)

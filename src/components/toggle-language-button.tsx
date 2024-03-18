@@ -1,27 +1,26 @@
 'use client'
 
-import * as React from 'react'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
+	DropdownMenuRadioGroup,
+	DropdownMenuRadioItem,
 } from '@/components/ui/dropdown-menu'
-import { useParams } from 'next/navigation'
-import { useRouter, usePathname } from '@/navigation'
+import { locales } from '@/i18n'
 import { useLocale } from 'next-intl'
+import { usePathname, useRouter } from '@/navigation'
+import Image from 'next/image'
 
 const dropdownMenuData = [
 	{
-		id: 0,
 		code: 'ru',
 		title: 'Русский',
 		icon: 'https://flagcdn.com/w20/ru.webp',
 	},
 	{
-		id: 1,
 		code: 'en',
 		title: 'English',
 		icon: 'https://flagcdn.com/w20/gb.webp',
@@ -30,18 +29,11 @@ const dropdownMenuData = [
 
 export function ToggleLanguageButton() {
 	const router = useRouter()
-	const params = useParams()
 	const pathname = usePathname()
-	const locale = useLocale()
+	const locale = useLocale() as (typeof locales)[number]
 
-	const changingLanguage = function (newLocale: string) {
-		router.replace(
-			// @ts-expect-error --TypeScript проверит, что только известные `params`
-			// используются в сочетании с заданным «путем». Поскольку эти двое будут
-			// всегда соответствует текущему маршруту, мы можем пропустить проверки во время выполнения.
-			{ pathname, params },
-			{ locale: newLocale }
-		)
+	const changeLanguage = (newLocale: typeof locale) => {
+		router.replace(pathname, { locale: newLocale })
 	}
 
 	return (
@@ -51,23 +43,38 @@ export function ToggleLanguageButton() {
 					<Image
 						width={20}
 						height={20}
-						src={dropdownMenuData.find(i => i.code === locale)!.icon}
+						src={
+							dropdownMenuData.find(i => i.code === locale)?.icon ||
+							`https://flagcdn.com/w20/${locale}.webp`
+						}
 						alt={locale}
 					/>
 				</Button>
 			</DropdownMenuTrigger>
 
-			<DropdownMenuContent align="end">
-				{dropdownMenuData.map(locale => (
-					<DropdownMenuItem
-						key={locale.id}
-						className="flex gap-2"
-						onClick={() => changingLanguage(locale.code)}
-					>
-						<Image width={20} height={20} src={locale.icon} alt={locale.code} />
-						<div>{locale.title}</div>
-					</DropdownMenuItem>
-				))}
+			<DropdownMenuContent>
+				<DropdownMenuRadioGroup value={locale}>
+					{locales.map(locale => {
+						const itemData = dropdownMenuData.find(i => i.code === locale)
+						return (
+							<DropdownMenuRadioItem
+								key={`lang-${locale}`}
+								onClick={() => changeLanguage(locale)}
+								value={locale}
+							>
+								<Image
+									width={20}
+									height={20}
+									src={
+										itemData?.icon || `https://flagcdn.com/w20/${locale}.webp`
+									}
+									alt={locale}
+								/>
+								<div className="ml-2">{itemData?.title || locale}</div>
+							</DropdownMenuRadioItem>
+						)
+					})}
+				</DropdownMenuRadioGroup>
 			</DropdownMenuContent>
 		</DropdownMenu>
 	)

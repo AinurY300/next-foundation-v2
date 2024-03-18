@@ -1,23 +1,15 @@
 {
-  "Index": {
-    "title": "Привет мир!"
-  },
+  "index": "Привет мир",
+  
   "components": {
-    "header": {
-      "loginButton": "Войти"
-    },
-    "toggle_language_button": {
-      "dropdown-menu": {
-        "system": "Русский",
-        "dark": "Английский",
-        "light": "Немецкий"
-      }
-    },
-    "toggle_theme_button": {
-      "dropdown-menu": {
-        "system": "Системная",
+    "githubAuthButton": "Войти с помощью GitHub",
+    "logoutButton": "Выйти",
+    "loginButton": "Войти",
+    "toggleThemeButton": {
+      "dropDownMenu": {
         "dark": "Тёмная",
-        "light": "Светлая"
+        "light": "Светлая",
+        "system": "Системная"
       }
     }
   }

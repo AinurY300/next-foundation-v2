@@ -2,7 +2,7 @@ import '../styles/global.css'
 import { Manrope as FontSans } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
-import { locales } from '@/config'
+// import { locales } from '@/i18n'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
 /**
@@ -18,9 +18,9 @@ const fontSans = FontSans({
 	variable: '--font-sans',
 })
 
-export function generateStaticParams() {
-	return locales.map(locale => ({ locale }))
-}
+// export function generateStaticParams() {
+// 	return locales.map(locale => ({ locale }))
+// }
 
 interface RootLayoutProps {
 	children: React.ReactNode

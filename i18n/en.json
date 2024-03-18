@@ -1,17 +1,15 @@
 {
-  "Index": {
-    "title": "Hello World!"
-  },
+  "index": "Hello world",
   "components": {
-    "toggle_theme_button": {
-      "dropdown-menu": {
-        "system": "System",
+    "githubAuthButton": "Login with GitHub",
+    "logoutButton": "Logout",
+    "loginButton": "Login",
+    "toggleThemeButton": {
+      "dropDownMenu": {
         "dark": "Dark",
-        "light": "Light"
+        "light": "Light",
+        "system": "System"
       }
-    },
-    "header": {
-      "loginButton": "Login"
     }
   }
 }
