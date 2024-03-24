@@ -1,14 +1,25 @@
 import NextAuth from 'next-auth'
-import GitHub from 'next-auth/providers/github'
+import Yandex from '@auth/core/providers/yandex'
+import GitHub from '@auth/core/providers/github'
+import Google from '@auth/core/providers/google'
+import { DrizzleAdapter } from '@auth/drizzle-adapter'
+import { db } from '@/db/drizzle'
 
 export const {
-	auth,
 	handlers: { GET, POST },
+	auth,
 } = NextAuth({
-	secret: process.env.AUTH_SECRET,
+	adapter: DrizzleAdapter(db),
 	session: { strategy: 'jwt' },
-	providers: [GitHub],
-	pages: {
-		signIn: '/login',
-	},
+	providers: [
+		Google({
+			allowDangerousEmailAccountLinking: true,
+		}),
+		GitHub({
+			allowDangerousEmailAccountLinking: true,
+		}),
+		Yandex({
+			allowDangerousEmailAccountLinking: true,
+		}),
+	],
 })

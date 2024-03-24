@@ -1,15 +1,15 @@
 {
-  "index": "Hello world",
-  "components": {
-    "githubAuthButton": "Login with GitHub",
-    "logoutButton": "Logout",
-    "loginButton": "Login",
-    "toggleThemeButton": {
-      "dropDownMenu": {
-        "dark": "Dark",
-        "light": "Light",
-        "system": "System"
-      }
-    }
-  }
+	"index": "Hello world",
+	"components": {
+		"githubAuthButton": "Login with GitHub",
+		"logoutButton": "Logout",
+		"loginButton": "Login",
+		"toggleThemeButton": {
+			"dropDownMenu": {
+				"dark": "Dark",
+				"light": "Light",
+				"system": "System"
+			}
+		}
+	}
 }

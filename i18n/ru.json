@@ -1,16 +1,15 @@
 {
-  "index": "Привет мир",
-  
-  "components": {
-    "githubAuthButton": "Войти с помощью GitHub",
-    "logoutButton": "Выйти",
-    "loginButton": "Войти",
-    "toggleThemeButton": {
-      "dropDownMenu": {
-        "dark": "Тёмная",
-        "light": "Светлая",
-        "system": "Системная"
-      }
-    }
-  }
+	"index": "Привет мир",
+	"components": {
+		"githubAuthButton": "Войти с помощью GitHub",
+		"logoutButton": "Выйти",
+		"loginButton": "Войти",
+		"toggleThemeButton": {
+			"dropDownMenu": {
+				"dark": "Тёмная",
+				"light": "Светлая",
+				"system": "Системная"
+			}
+		}
+	}
 }

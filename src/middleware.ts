@@ -1,11 +1,11 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
-import { auth } from '@/auth'
-import createIntlMiddleware from 'next-intl/middleware'
 import { locales, localePrefix, defaultLocale } from '@/i18n'
+import createIntlMiddleware from 'next-intl/middleware'
+import { auth } from '@/auth'
 
 const publicPages = ['/']
-const authPages = ['/login']
+const authPages = ['/auth/signin', '/auth/signup']
 
 const intlMiddleware = createIntlMiddleware({
 	locales,
@@ -18,24 +18,21 @@ const testPathnameRegex = (pages: string[], pathName: string) => {
 		`^(/(${locales.join('|')}))?(${pages
 			.flatMap(p => (p === '/' ? ['', '/'] : p))
 			.join('|')})/?$`,
-		'i'
+		'i',
 	).test(pathName)
 }
 
 const authMiddleware = auth(req => {
 	const isAuthPage = testPathnameRegex(authPages, req.nextUrl.pathname)
 	const session = req.auth
-
 	// Перенаправление на страницу входа, если пользователь не аутентифицирован
 	if (!session && !isAuthPage) {
 		return NextResponse.redirect(new URL(authPages[0], req.nextUrl))
 	}
-
 	// Перенаправление на домашнюю страницу, если пользователь аутентифицирован и пытается получить доступ к странице аутентификации.
 	if (session && isAuthPage) {
 		return NextResponse.redirect(new URL('/', req.nextUrl))
 	}
-
 	return intlMiddleware(req)
 })
 
@@ -55,6 +52,5 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-	// Match only internationalized pathnames
 	matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }

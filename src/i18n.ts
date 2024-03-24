@@ -1,6 +1,3 @@
-type Messages = typeof import('../i18n/en.json')
-declare interface IntlMessages extends Messages {}
-
 import { notFound } from 'next/navigation'
 import { getRequestConfig } from 'next-intl/server'
 

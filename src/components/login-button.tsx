@@ -4,19 +4,19 @@ import { getTranslations } from 'next-intl/server'
 import { auth } from '@/auth'
 
 export default async function LoginButton() {
-	const t = await getTranslations('components')
+	const t = await getTranslations()
 	const session = await auth()
 
 	if (session)
 		return (
 			<Button asChild>
-				<Link href="/auth/logout">{t('logoutButton')}</Link>
+				<Link href="/auth/logout">{t('components.logoutButton')}</Link>
 			</Button>
 		)
 	else
 		return (
 			<Button asChild>
-				<Link href="/login">{t('loginButton')}</Link>
+				<Link href="/auth/signin">{t('components.loginButton')}</Link>
 			</Button>
 		)
 }
