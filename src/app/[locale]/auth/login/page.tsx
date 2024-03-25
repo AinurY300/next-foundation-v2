@@ -143,7 +143,7 @@ export default function LoginPage({ params: { locale } }: LoginPageProps) {
 									<Button
 										variant="outline"
 										type="button"
-										onClick={() => signIn('github')}
+										onClick={() => signIn('google')}
 									>
 										<Image
 											src="/google.svg"
@@ -161,6 +161,7 @@ export default function LoginPage({ params: { locale } }: LoginPageProps) {
 											className="mr-2"
 											width={20}
 											height={20}
+											onClick={() => signIn('yandex')}
 										/>
 										{t('yandex')}
 									</Button>
