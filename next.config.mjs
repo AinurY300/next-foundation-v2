@@ -11,11 +11,18 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
-				protocol: 'https',
 				hostname: 'flagcdn.com',
 			},
 		],
 	},
+	// images: {
+	// 	remotePatterns: [
+	// 		{
+	// 			protocol: 'https',
+	// 			hostname: 'flagcdn.com',
+	// 		},
+	// 	],
+	// },
 }
 
 export default withNextIntl(nextConfig)

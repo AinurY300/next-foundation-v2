@@ -16,7 +16,7 @@ export default async function LoginButton() {
 	else
 		return (
 			<Button asChild>
-				<Link href="/auth/signin">{t('components.loginButton')}</Link>
+				<Link href="/auth/login">{t('components.loginButton')}</Link>
 			</Button>
 		)
 }

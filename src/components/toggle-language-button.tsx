@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
+import { Button, ButtonProps } from '@/components/ui/button'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -18,16 +18,16 @@ const dropdownMenuData = [
 	{
 		code: 'ru',
 		title: 'Русский',
-		icon: 'https://flagcdn.com/w20/ru.webp',
+		icon: '/flags/russian-federation.svg',
 	},
 	{
 		code: 'en',
 		title: 'English',
-		icon: 'https://flagcdn.com/w20/gb.webp',
+		icon: '/flags/united-kingdom.svg',
 	},
 ]
 
-export function ToggleLanguageButton() {
+export function ToggleLanguageButton(props: ButtonProps) {
 	const router = useRouter()
 	const pathname = usePathname()
 	const locale = useLocale() as (typeof locales)[number]
@@ -39,7 +39,7 @@ export function ToggleLanguageButton() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="outline" size="icon">
+				<Button variant="outline" size="icon" {...props}>
 					<Image
 						width={20}
 						height={20}

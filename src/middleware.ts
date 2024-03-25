@@ -5,7 +5,8 @@ import createIntlMiddleware from 'next-intl/middleware'
 import { auth } from '@/auth'
 
 const publicPages = ['/']
-const authPages = ['/auth/signin', '/auth/signup']
+const authPages = ['/auth/login']
+const protectedPages = ['/dashboard']
 
 const intlMiddleware = createIntlMiddleware({
 	locales,
@@ -44,13 +45,22 @@ export default function middleware(req: NextRequest) {
 		return (authMiddleware as any)(req)
 	}
 
-	if (isPublicPage) {
-		return intlMiddleware(req)
-	} else {
-		return (authMiddleware as any)(req)
-	}
+	// if (isPublicPage) {
+	// 	return intlMiddleware(req)
+	// } else {
+	// 	return (authMiddleware as any)(req)
+	// }
+	return intlMiddleware(req)
 }
 
+// export const config = {
+// 	matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+// }
+
+// const s = `/(ru|en)/:path*`
+
 export const config = {
-	matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+	// Match only internationalized pathnames
+	// matcher: ['/', '/(ru|en)/:path*'],
+	matcher: ['/', '/(ru|en)/:path*'],
 }

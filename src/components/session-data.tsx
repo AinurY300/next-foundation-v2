@@ -6,7 +6,7 @@ export default async function SessionData() {
 	if (session?.user) {
 		return (
 			<div className="my-4 flex flex-col rounded-md bg-accent">
-				<pre className="py-6 px-4 whitespace-pre-wrap break-all">
+				<pre className="whitespace-pre-wrap break-all px-4 py-6">
 					{JSON.stringify(session, null, 2)}
 				</pre>
 			</div>

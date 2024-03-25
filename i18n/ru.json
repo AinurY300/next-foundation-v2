@@ -1,7 +1,21 @@
 {
+	"back": "Назад",
+	"yandex": "Яндекс",
 	"index": "Привет мир",
+	"pages": {
+		"auth": {
+			"login": {
+				"title": "Вход",
+				"description": "Войдите в аккаунт с помощью электронной почты",
+				"email": "Электронная почта",
+				"emailPlaceholder": "example@mail.ru",
+				"password": "Пароль",
+				"passwordPlaceholder": "Минимум {charactersCount} символов",
+				"submitButton": "Войти"
+			}
+		}
+	},
 	"components": {
-		"githubAuthButton": "Войти с помощью GitHub",
 		"logoutButton": "Выйти",
 		"loginButton": "Войти",
 		"toggleThemeButton": {

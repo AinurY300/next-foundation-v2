@@ -1,15 +1,29 @@
 {
-	"index": "Hello world",
-	"components": {
-		"githubAuthButton": "Login with GitHub",
-		"logoutButton": "Logout",
-		"loginButton": "Login",
-		"toggleThemeButton": {
-			"dropDownMenu": {
-				"dark": "Dark",
-				"light": "Light",
-				"system": "System"
-			}
-		}
-	}
+  "index": "Hello world",
+  "yandex": "Yandex",
+  "components": {
+    "logoutButton": "Logout",
+    "loginButton": "Login",
+    "toggleThemeButton": {
+      "dropDownMenu": {
+        "dark": "Dark",
+        "light": "Light",
+        "system": "System"
+      }
+    }
+  },
+  "pages": {
+    "auth": {
+      "login": {
+        "description": "Sign in using your email",
+        "email": "Email",
+        "emailPlaceholder": "example@gmail.com",
+        "password": "Password",
+        "passwordPlaceholder": "Minimum {charactersCount} characters",
+        "submitButton": "Login",
+        "title": "Login"
+      }
+    }
+  },
+  "back": "Back"
 }
