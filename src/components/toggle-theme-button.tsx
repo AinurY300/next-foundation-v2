@@ -27,15 +27,9 @@ export function ToggleThemeButton(props: ButtonProps) {
 
 			<DropdownMenuContent>
 				<DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-					<DropdownMenuRadioItem value="light">
-						{t('light')}
-					</DropdownMenuRadioItem>
-					<DropdownMenuRadioItem value="dark">
-						{t('dark')}
-					</DropdownMenuRadioItem>
-					<DropdownMenuRadioItem value="system">
-						{t('system')}
-					</DropdownMenuRadioItem>
+					<DropdownMenuRadioItem value="light">{t('light')}</DropdownMenuRadioItem>
+					<DropdownMenuRadioItem value="dark">{t('dark')}</DropdownMenuRadioItem>
+					<DropdownMenuRadioItem value="system">{t('system')}</DropdownMenuRadioItem>
 				</DropdownMenuRadioGroup>
 			</DropdownMenuContent>
 		</DropdownMenu>

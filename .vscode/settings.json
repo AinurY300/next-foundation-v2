@@ -1,13 +1,19 @@
 {
-	"typescript.tsdk": "node_modules\\typescript\\lib",
+	// "typescript.tsdk": "node_modules\\typescript\\lib",
 	"editor.suggest.showWords": false,
+
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always",
+		"source.fixAll.format": "always"
+	},
 
 	// i18n
 	"i18n-ally.sourceLanguage": "ru",
 	"i18n-ally.displayLanguage": "ru",
 	"i18n-ally.localesPaths": ["i18n"],
-	"i18n-ally.enabledFrameworks": [
-		"next-intl"
-	],
+	"i18n-ally.enabledFrameworks": ["next-intl"],
 	"i18n-ally.keystyle": "nested"
 }

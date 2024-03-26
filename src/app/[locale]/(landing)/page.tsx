@@ -1,6 +1,6 @@
 import SessionData from '@/components/session-data'
 // import { useTranslations } from 'next-intl'
-import { db } from '@/db/drizzle'
+// import { db } from '@/db/drizzle'
 
 export default async function LandingPage() {
 	// const s = await db.query.users.findFirst()

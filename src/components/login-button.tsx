@@ -1,22 +1,20 @@
+'use client'
+
 import { Button } from './ui/button'
 import { Link } from '@/navigation'
-import { getTranslations } from 'next-intl/server'
-import { auth } from '@/auth'
+import { useTranslations } from 'next-intl'
+import { useSession } from 'next-auth/react'
+import { signOut } from 'next-auth/react'
 
-export default async function LoginButton() {
-	const t = await getTranslations()
-	const session = await auth()
+export default function LoginButton() {
+	const t = useTranslations()
+	const session = useSession()
 
-	if (session)
-		return (
-			<Button asChild>
-				<Link href="/auth/logout">{t('components.logoutButton')}</Link>
-			</Button>
-		)
+	if (session.data) return <Button onClick={() => signOut()}>{t('components.logoutButton')}</Button>
 	else
 		return (
 			<Button asChild>
-				<Link href="/auth/login">{t('components.loginButton')}</Link>
+				<Link href="/login">{t('components.loginButton')}</Link>
 			</Button>
 		)
 }

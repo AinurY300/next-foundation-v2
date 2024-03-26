@@ -40,12 +40,7 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={locale} suppressHydrationWarning>
-			<body
-				className={cn(
-					'min-h-screen bg-background font-sans antialiased',
-					fontSans.variable,
-				)}
-			>
+			<body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
 				<SessionProvider session={session}>
 					<ThemeProvider
 						attribute="class"
@@ -53,9 +48,7 @@ export default async function LocaleLayout({
 						enableSystem
 						disableTransitionOnChange
 					>
-						<NextIntlClientProvider messages={messages}>
-							{children}
-						</NextIntlClientProvider>
+						<NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
 					</ThemeProvider>
 				</SessionProvider>
 			</body>

@@ -1,10 +1,4 @@
-import {
-	timestamp,
-	pgTable,
-	text,
-	primaryKey,
-	integer,
-} from 'drizzle-orm/pg-core'
+import { timestamp, pgTable, text, primaryKey, integer } from 'drizzle-orm/pg-core'
 import type { AdapterAccount } from '@auth/core/adapters'
 
 export const users = pgTable('user', {

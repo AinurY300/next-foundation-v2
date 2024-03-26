@@ -1,10 +1,6 @@
 import { Header } from '@/components/Landing/Header'
 
-export default async function LandingLayout({
-	children,
-}: {
-	children: React.ReactNode
-}) {
+export default async function LandingLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<div>
 			<Header />

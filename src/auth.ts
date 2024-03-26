@@ -8,6 +8,8 @@ import { db } from '@/db/drizzle'
 export const {
 	handlers: { GET, POST },
 	auth,
+	signIn,
+	signOut,
 } = NextAuth({
 	adapter: DrizzleAdapter(db),
 	session: { strategy: 'jwt' },

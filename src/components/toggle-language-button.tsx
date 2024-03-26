@@ -4,7 +4,7 @@ import { Button, ButtonProps } from '@/components/ui/button'
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuItem,
+	// DropdownMenuItem,
 	DropdownMenuTrigger,
 	DropdownMenuRadioGroup,
 	DropdownMenuRadioItem,
@@ -41,6 +41,7 @@ export function ToggleLanguageButton(props: ButtonProps) {
 			<DropdownMenuTrigger asChild>
 				<Button variant="outline" size="icon" {...props}>
 					<Image
+						className="w-5"
 						width={20}
 						height={20}
 						src={
@@ -64,10 +65,9 @@ export function ToggleLanguageButton(props: ButtonProps) {
 							>
 								<Image
 									width={20}
+									className="w-5"
 									height={20}
-									src={
-										itemData?.icon || `https://flagcdn.com/w20/${locale}.webp`
-									}
+									src={itemData?.icon || `https://flagcdn.com/w20/${locale}.webp`}
 									alt={locale}
 								/>
 								<div className="ml-2">{itemData?.title || locale}</div>

@@ -1,29 +1,39 @@
 {
-  "index": "Hello world",
-  "yandex": "Yandex",
-  "components": {
-    "logoutButton": "Logout",
-    "loginButton": "Login",
-    "toggleThemeButton": {
-      "dropDownMenu": {
-        "dark": "Dark",
-        "light": "Light",
-        "system": "System"
-      }
-    }
-  },
-  "pages": {
-    "auth": {
-      "login": {
-        "description": "Sign in using your email",
-        "email": "Email",
-        "emailPlaceholder": "example@gmail.com",
-        "password": "Password",
-        "passwordPlaceholder": "Minimum {charactersCount} characters",
-        "submitButton": "Login",
-        "title": "Login"
-      }
-    }
-  },
-  "back": "Back"
+	"index": "Hello world",
+	"or": "or",
+	"yandex": "Yandex",
+	"components": {
+		"logoutButton": "Logout",
+		"loginButton": "Login",
+		"toggleThemeButton": {
+			"dropDownMenu": {
+				"dark": "Dark",
+				"light": "Light",
+				"system": "System"
+			}
+		}
+	},
+	"pages": {
+		"auth": {
+			"login": {
+				"description": "Don't have an account?",
+				"descriptionLink": "Sign up",
+				"email": "Email",
+				"emailPlaceholder": "example@gmail.com",
+				"password": "Password",
+				"passwordPlaceholder": "Minimum {charactersCount} characters",
+				"submitButton": "Login",
+				"title": "Login"
+			},
+			"signup": {
+				"title": "Create account",
+				"description": "Already have an account?",
+				"descriptionLink": "Log in",
+				"username": "Username",
+				"usernamePlaceholder": "John Doe",
+				"submitButton": "Create account"
+			}
+		}
+	},
+	"back": "Back"
 }

@@ -1,29 +1,39 @@
 {
-	"back": "Назад",
-	"yandex": "Яндекс",
-	"index": "Привет мир",
-	"pages": {
-		"auth": {
-			"login": {
-				"title": "Вход",
-				"description": "Войдите в аккаунт с помощью электронной почты",
-				"email": "Электронная почта",
-				"emailPlaceholder": "example@mail.ru",
-				"password": "Пароль",
-				"passwordPlaceholder": "Минимум {charactersCount} символов",
-				"submitButton": "Войти"
-			}
-		}
-	},
-	"components": {
-		"logoutButton": "Выйти",
-		"loginButton": "Войти",
-		"toggleThemeButton": {
-			"dropDownMenu": {
-				"dark": "Тёмная",
-				"light": "Светлая",
-				"system": "Системная"
-			}
-		}
-	}
+  "back": "Назад",
+  "or": "или",
+  "yandex": "Яндекс",
+  "index": "Привет мир",
+  "pages": {
+    "auth": {
+      "login": {
+        "title": "Вход",
+        "description": "У вас нет учётной записи?",
+        "descriptionLink": "Создать аккаунт",
+        "email": "Электронная почта",
+        "emailPlaceholder": "example@mail.ru",
+        "password": "Пароль",
+        "passwordPlaceholder": "Минимум {charactersCount} символов",
+        "submitButton": "Войти"
+      },
+      "signup": {
+        "title": "Создание аккаунта",
+        "description": "У вас уже есть учетная запись?",
+        "descriptionLink": "Войти",
+        "username": "Имя пользователя",
+        "usernamePlaceholder": "Иван",
+        "submitButton": "Создать аккаунт"
+      }
+    }
+  },
+  "components": {
+    "logoutButton": "Выйти",
+    "loginButton": "Войти",
+    "toggleThemeButton": {
+      "dropDownMenu": {
+        "dark": "Тёмная",
+        "light": "Светлая",
+        "system": "Системная"
+      }
+    }
+  }
 }
