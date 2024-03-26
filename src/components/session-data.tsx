@@ -11,5 +11,7 @@ export default async function SessionData() {
 				</pre>
 			</div>
 		)
+	} else {
+		return <div>Пользователя нет</div>
 	}
 }

@@ -1,4 +1,5 @@
 import '@/styles/global.css'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Mulish as FontSans } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
@@ -51,6 +52,7 @@ export default async function LocaleLayout({
 						<NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
 					</ThemeProvider>
 				</SessionProvider>
+				<SpeedInsights />
 			</body>
 		</html>
 	)
